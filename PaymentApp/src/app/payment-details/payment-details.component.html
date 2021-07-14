@@ -1,0 +1,56 @@
+
+<div class="jumbotron py-3">
+    
+    <h1 class="display-4"><strong>Payment.io&nbsp;</strong>
+        <img class="img-test"
+            src="https://img.icons8.com/external-kiranshastry-lineal-color-kiranshastry/2x/external-payment-economy-kiranshastry-lineal-color-kiranshastry.png"
+            height="60" width="60">
+    </h1>
+    <p class="lead">Adicionar forma de pagamento <strong>+</strong></p>
+
+    <hr class="my-2">
+    <sup>Salve informações para pagamentos on-line mais seguros usando o Assistente</sup>
+    <!-- <div>
+        <img src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/visa@2x.png">
+        <img src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/mastercard@2x.png">
+        <img src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/amex@2x.png">
+        <img src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/diners@2x.png">
+    </div> -->
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <app-payment-detail-form></app-payment-detail-form>
+    </div>
+    <div class="col-md-6">
+        <table class="table">
+            <thead class="thead-light">
+                <sup><i>Para editar basta um click no registro</i></sup>
+                <tr>
+                    <th>Titular do Cartão</th>
+                    <th>Número</th>
+                    <th>Data Exp.</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let pd of service.list">
+                    <!-- Click Edit Text -->
+                    <td (click)="populateForm(pd)">{{pd.cardOwnerName}}</td>
+                    <td (click)="populateForm(pd)">{{pd.cardNumber}}</td>
+                    <td (click)="populateForm(pd)">{{pd.expirationDate}}</td>
+                    <td>
+                        <i class="far fa-trash-alt fa-lg text-danger" (click)="onDelete(pd.paymentDetailId)"></i>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <sup><strong>Lista exclusiva do Servidor*</strong></sup>
+
+        <!-- Adicionar uma nota explicativa sobre o acesso ao DataBase -->
+    </div>
+</div>
+
+<div class="footer">
+    <p><strong>Github: </strong><a href="https://github.com/William-io" target="_blank">William-io</a>
+</div>
