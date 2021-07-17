@@ -17,6 +17,7 @@ Web-API/ASP.NET 5.0, with Angular 12
 > Segue os: `--Comandos` 
 ```sh
 npm install -g @angular/cli 
+dotnet tool install --global dotnet-ef
 dotnet add package Microsoft.EntityFrameworkCore
 dotnet add package Microsoft.EntityFrameworkCore.Tools
 dotnet add package Microsoft.EntityFrameworkCore.SqlServer
