@@ -26,10 +26,11 @@
         </div>
         <div class="form-group col-md-6">
             <label>Data de validade</label>
-            <input class="form-control form-control-lg" placeholder="MM/YY" name="expirationDate"
-                #expirationDate="ngModel" [(ngModel)]="service.formData.expirationDate" required maxlength="5"
-                minlength="5" [class.invalid]="expirationDate.invalid && expirationDate.touched">
+            <input class="form-control form-control-lg" placeholder="MM/YY"
+                name="expirationDate" #expirationDate="ngModel" [(ngModel)]="service.formData.expirationDate" required
+                maxlength="5" minlength="5" [class.invalid]="expirationDate.invalid && expirationDate.touched">            
         </div>
+
     </div>
 
     <div class="form-group">
@@ -47,7 +48,7 @@
             <img src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/mastercard@2x.png">
             <img src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/amex@2x.png">
             <img src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/diners@2x.png">
-        </div>       
+        </div>
 
     </div>
 </form>
