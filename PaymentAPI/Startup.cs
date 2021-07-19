@@ -6,6 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using PaymentAPI.Data;
+using PaymentAPI.Repository;
 
 namespace PaymentAPI
 {
@@ -21,6 +22,8 @@ namespace PaymentAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddScoped<IUnit, Unit>();
+
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
@@ -61,3 +64,4 @@ namespace PaymentAPI
         }
     }
 }
+
