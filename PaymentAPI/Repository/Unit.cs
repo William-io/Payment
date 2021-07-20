@@ -1,4 +1,5 @@
 ﻿using PaymentAPI.Data;
+using System.Threading.Tasks;
 
 namespace PaymentAPI.Repository
 {
@@ -25,9 +26,9 @@ namespace PaymentAPI.Repository
         }
 
         //persistir os dados
-        public void Commit()
+        public async Task Commit()
         {
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
         }
 
         //Libera os recursos do context que está sendo injetado

@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using PaymentAPI.Models;
@@ -20,16 +21,16 @@ namespace PaymentAPI.Controllers
 
         // GET: api/PaymentDetail
         [HttpGet]
-        public ActionResult<IEnumerable<PaymentDetail>> GetpaymentDetails()
+        public async Task<ActionResult<IEnumerable<PaymentDetail>>> GetpaymentDetails()
         {
-            return _uow.PaymentDetailRepository.Get().ToList();
+            return await _uow.PaymentDetailRepository.Get().ToListAsync();
         }
 
         // GET: api/PaymentDetail/5
         [HttpGet("{id}")]
-        public ActionResult<PaymentDetail> GetPaymentDetail(int id)
+        public async Task<ActionResult<PaymentDetail>> GetPaymentDetail(int id)
         {
-            var paymentDetail = _uow.PaymentDetailRepository.GetById(p => p.PaymentDetailId == id);
+            var paymentDetail = await _uow.PaymentDetailRepository.GetById(p => p.PaymentDetailId == id);
 
             if (paymentDetail == null)
             {
@@ -42,7 +43,7 @@ namespace PaymentAPI.Controllers
         // PUT: api/PaymentDetail/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public IActionResult PutPaymentDetail(int id, PaymentDetail paymentDetail)
+        public async Task<IActionResult> PutPaymentDetail(int id, PaymentDetail paymentDetail)
         {
             if (id != paymentDetail.PaymentDetailId)
             {
@@ -50,12 +51,12 @@ namespace PaymentAPI.Controllers
             }
 
             _uow.PaymentDetailRepository.Update(paymentDetail);
-            _uow.Commit();
+            await _uow.Commit();
             // return Ok();
 
             try
             {
-                _uow.Commit();
+                await _uow.Commit();
             }
             catch (DbUpdateConcurrencyException)
             {
@@ -69,32 +70,33 @@ namespace PaymentAPI.Controllers
                 }
             }
 
-            return Ok();
+            return NoContent();
         }
 
         // POST: api/PaymentDetail
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public ActionResult<PaymentDetail> PostPaymentDetail(PaymentDetail paymentDetail)
+        public async Task<ActionResult<PaymentDetail>> PostPaymentDetail(PaymentDetail paymentDetail)
         {
             _uow.PaymentDetailRepository.Add(paymentDetail);
-            _uow.Commit();
+            await _uow.Commit(); //SaveChanges
 
             return CreatedAtAction("GetPaymentDetail", new { id = paymentDetail.PaymentDetailId }, paymentDetail);
         }
 
         // DELETE: api/PaymentDetail/5
         [HttpDelete("{id}")]
-        public IActionResult DeletePaymentDetail(int id)
+        public async Task<IActionResult> DeletePaymentDetail(int id)
         {
-            var paymentDetail = _uow.PaymentDetailRepository.GetById(p => p.PaymentDetailId == id);
+            var paymentDetail = await _uow.PaymentDetailRepository.GetById(p => p.PaymentDetailId == id);
+
             if (paymentDetail == null)
             {
                 return NotFound();
             }
 
             _uow.PaymentDetailRepository.Delete(paymentDetail);
-            _uow.Commit();
+            await _uow.Commit();
 
             return NoContent();
         }

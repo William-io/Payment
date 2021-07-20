@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using PaymentAPI.Models;
 using PaymentAPI.Repository;
@@ -12,10 +13,10 @@ namespace PaymentAPI.Repository
         {
         }
 
-        public IEnumerable<PaymentDetail> GetPaymentDetailsByCustomerId()
+        public async Task<IEnumerable<PaymentDetail>> GetPaymentDetailsByCustomerId()
         {
             //Retorna a lista de payment ordenado por ID
-            return Get().OrderBy(i => i.PaymentDetailId).ToList();
+            return await Get().OrderBy(i => i.PaymentDetailId).ToListAsync();
         }
     }
 }
