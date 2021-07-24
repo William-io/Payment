@@ -23,10 +23,6 @@ namespace PaymentAPI
         public void ConfigureServices(IServiceCollection services)
         {
 
-            services.AddIdentity<PaymentUser, IdentityRole>()
-            .AddEntityFrameworkStores<PaymentContext>()
-            .AddDefaultTokenProviders();
-
             services.AddScoped<IUnit, Unit>();
 
             services.AddControllers();
