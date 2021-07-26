@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30114.105
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31521.260
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaymentAPI", "PaymentAPI.csproj", "{5731CAEB-D02E-40CE-A59D-1B0A93D2CE7D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PaymentAPI", "PaymentAPI.csproj", "{5731CAEB-D02E-40CE-A59D-1B0A93D2CE7D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaymentTest", "..\PaymentTest\PaymentTest.csproj", "{51441F11-9197-461B-AD1E-7BAB247E3BCB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,9 +15,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{5731CAEB-D02E-40CE-A59D-1B0A93D2CE7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -30,5 +29,23 @@ Global
 		{5731CAEB-D02E-40CE-A59D-1B0A93D2CE7D}.Release|x64.Build.0 = Release|Any CPU
 		{5731CAEB-D02E-40CE-A59D-1B0A93D2CE7D}.Release|x86.ActiveCfg = Release|Any CPU
 		{5731CAEB-D02E-40CE-A59D-1B0A93D2CE7D}.Release|x86.Build.0 = Release|Any CPU
+		{51441F11-9197-461B-AD1E-7BAB247E3BCB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51441F11-9197-461B-AD1E-7BAB247E3BCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51441F11-9197-461B-AD1E-7BAB247E3BCB}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{51441F11-9197-461B-AD1E-7BAB247E3BCB}.Debug|x64.Build.0 = Debug|Any CPU
+		{51441F11-9197-461B-AD1E-7BAB247E3BCB}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{51441F11-9197-461B-AD1E-7BAB247E3BCB}.Debug|x86.Build.0 = Debug|Any CPU
+		{51441F11-9197-461B-AD1E-7BAB247E3BCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51441F11-9197-461B-AD1E-7BAB247E3BCB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51441F11-9197-461B-AD1E-7BAB247E3BCB}.Release|x64.ActiveCfg = Release|Any CPU
+		{51441F11-9197-461B-AD1E-7BAB247E3BCB}.Release|x64.Build.0 = Release|Any CPU
+		{51441F11-9197-461B-AD1E-7BAB247E3BCB}.Release|x86.ActiveCfg = Release|Any CPU
+		{51441F11-9197-461B-AD1E-7BAB247E3BCB}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9D4812ED-1FD2-403B-9DC5-FCEA75BCE2F6}
 	EndGlobalSection
 EndGlobal
